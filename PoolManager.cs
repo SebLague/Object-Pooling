@@ -65,13 +65,13 @@ public class PoolManager : MonoBehaviour {
 		}
 
 		public void Reuse(Vector3 position, Quaternion rotation) {
-			if (hasPoolObjectComponent) {
-				poolObjectScript.OnObjectReuse ();
-			}
-
 			gameObject.SetActive (true);
 			transform.position = position;
 			transform.rotation = rotation;
+
+			if (hasPoolObjectComponent) {
+				poolObjectScript.OnObjectReuse ();
+			}
 		}
 
 		public void SetParent(Transform parent) {
